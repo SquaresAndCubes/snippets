@@ -1,3 +1,4 @@
+#Calculates daily compounding interest using recursion.
 
 starting_funds = 10000
 day_one = 0
