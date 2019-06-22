@@ -1,14 +1,15 @@
-#This recursive python function calculates daily compounding interest.
 
 starting_funds = 10000
 day_one = 0
+interest = .014
 
-def func(total, count):
-  print("{:,}".format(int(total * 1.014) - total))
-  total = total * 1.014
+def func(total, count, interest):
+  inc_profit = (total * (interest + 1)) - total
+  total = total * (interest + 1)
   count = count + 1
-  print(str(count) + " :: " + "{:,}".format(int(total)))
+  print("Day :: " + str(count) + " :: " + "{:,}".format(int(total)))
+  print("Incremental Profit :: " + "{:,}".format(int(inc_profit)))
   if count < 365:
-    func(total, count)
+    func(total, count, interest)
 
-func(starting_funds, day_one)
+func(starting_funds, day_one, interest)
